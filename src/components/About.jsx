@@ -1,5 +1,5 @@
-// src/components/About.jsx
-import React from 'react';
+import "iconify-icon";
+import { IconifyIconComponent } from "iconify-icon";
 
 const About = () => {
   return (
@@ -35,9 +35,9 @@ const About = () => {
             </p>
 
             <div className="space-y-4">
-              <Info icon="fa-map-marker-alt" text="Jakarta, Indonesia" />
+              <Info icon="weui:location-filled" text="Jakarta, Indonesia" />
               <Info icon="fa-graduation-cap" text="Informatics Engineering, Politeknik Negeri Indramayu" />
-              <Info icon="fa-briefcase" text="1+ Years Experience" />
+              {/* <Info icon="fa-briefcase" text="1+ Years Experience" /> */}
             </div>
           </div>
 
@@ -64,7 +64,7 @@ const About = () => {
 const Info = ({ icon, text }) => (
   <div className="flex items-center">
     <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-3">
-      <i className={`fas ${icon} text-indigo-600 dark:text-indigo-400`}></i>
+      <iconify-icon icon={icon} width="28" height="28" className={`text-indigo-600 dark:text-indigo-400`}></iconify-icon>
     </div>
     <span className="dark:text-gray-300">{text}</span>
   </div>
@@ -74,7 +74,7 @@ const Info = ({ icon, text }) => (
 const Expertise = ({ icon, text }) => (
   <div className="flex items-center bg-white dark:bg-gray-700 p-4 rounded-lg shadow-sm">
     <div className="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center mr-4">
-      <i className={`fas ${icon} text-indigo-600 dark:text-indigo-400 text-xl`}></i>
+      <iconify-icon icon={icon} width="24" height="24" className={`fas ${icon} text-indigo-600 dark:text-indigo-400 text-xl`}></iconify-icon>
     </div>
     <span className="dark:text-gray-300 font-medium">{text}</span>
   </div>

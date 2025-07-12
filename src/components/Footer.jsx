@@ -1,19 +1,19 @@
 // src/components/Footer.jsx
-import React from 'react';
 import githubLogo from '../assets/githubLogo.svg';
 import linkedinLogo from '../assets/linkedinLogo.svg';
 import instagramLogo from '../assets/instagramLogo.svg';
+import "iconify-icon";
 
 
 const ConnectIcon = [
-  {name: 'Github', icon: githubLogo, href: 'https://github.com/username' },
-  {name: 'LinkedIn', icon: linkedinLogo, href: 'https://linkedin.com/in/username' },
+  {name: 'Github', icon: githubLogo, href: 'https://github.com/Fiqryoa' },
+  {name: 'LinkedIn', icon: linkedinLogo, href: 'https://www.linkedin.com/in/fiqryomaratala' },
   {name: 'Instagram', icon: instagramLogo, href: 'https://instagram.com/fiqryoa' },
 
 ];
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="fade-in">
@@ -41,9 +41,8 @@ const Footer = () => {
               {ConnectIcon.map((item, icon, index) => (
                 <a
                   key={index}
-                  href={icon.href}
-                  target="_brank"
-                  rel="noopener noreferrer"
+                  href={item.href}
+                  target="_blank"
                   className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-indigo-600 transition-colors"
                   title={item.name}
                 >
@@ -54,12 +53,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 fade-in">
+        <div className="border-t border-gray-800 mt-12 pt-4 text-center text-gray-400 fade-in">
           <p>&copy; 2024 Fiqry Omar Atala. All rights reserved.</p>
-          <p className="mt-2">
-            Built with React, Tailwind CSS, and
-            <i className="fas fa-heart text-red-500 ml-1"></i>
-          </p>
         </div>
       </div>
     </footer>

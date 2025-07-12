@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // src/components/Hero.jsx
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import omarA from '../assets/omarA.jpg';
 
 const Hero = () => {
@@ -81,12 +81,12 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate__animated animate__fadeInUp animate__delay-1s">
           <a
             href="#projects"
-            className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition-colors hover:shadow-lg"          >
+            className="border-2 border-white bg-white text-gray-600 px-8 py-3 rounded-full font-semibold hover:bg-white/80 transition-colors hover:shadow-lg"          >
             <i className="fas fa-eye mr-2"></i> Lihat Projects
           </a>
           <a
             href="#contact"
-            className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition-colors hover:shadow-lg"
+            className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/20 transition-colors hover:shadow-lg"
           >
             <i className="fas fa-paper-plane mr-2"></i> Hubungi Saya
           </a>
