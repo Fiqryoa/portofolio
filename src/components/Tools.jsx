@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 // src/components/Tools.jsx
 import dockerLogo from '../assets/dockerLogo.svg';
 import figmaLogo from '../assets/figmaLogo.svg';
@@ -20,15 +23,18 @@ const tools = [
 ];
 
 const Tools = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1200, once: true });
+  }, []);
   return (
     <section id="tools" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-12 fade-in">
-          <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+          <h2 data-aos="fade-up" className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
             Technologies & Tools I Use
           </h2>
-          <div className="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <div data-aos="fade-up" data-aos-delay="100" className="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
+          <p data-aos="fade-up" data-aos-delay="200" className="text-lg text-gray-600 dark:text-gray-300">
             Beberapa tools andalan yang saya gunakan dalam pengembangan aplikasi sehari-hari.
           </p>
         </div>
@@ -37,6 +43,7 @@ const Tools = () => {
           {tools.map((tool, index) => (
             <div
               key={index}
+              data-aos="fade-up" data-aos-delay={index*150}
               className="flex flex-col items-center text-center hover:scale-105 transform transition duration-300"
             >
               <div className="w-14 h-14 mb-3">

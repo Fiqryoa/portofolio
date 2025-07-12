@@ -1,6 +1,9 @@
 // src/components/Contact.jsx
 import { useState } from 'react';
 import "iconify-icon";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -15,13 +18,17 @@ const Contact = () => {
     }, 2500);
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1200, once: true });
+  }, []);
+
   return (
     <section id="contact" className="py-20 gradient-bg text-white">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
-          <div className="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-200">
+          <h2 data-aos="fade-up" className="text-4xl font-bold mb-4">Get In Touch</h2>
+          <div data-aos="fade-up" data-aos-delay="100" className="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
+          <p data-aos="fade-up" data-aos-delay="200" className="text-xl text-gray-200">
             Tertarik untuk bekerja sama? Mari diskusikan project Anda!
           </p>
         </div>
@@ -35,7 +42,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6 fade-in">
+          <form data-aos="fade-up" data-aos-delay="300" onSubmit={handleSubmit} className="space-y-6 fade-in">
             <Input label="Name" type="text" placeholder="Your Name" required />
             <Input label="Email" type="email" placeholder="your@email.com" required />
             <Input label="Subject" type="text" placeholder="Project Discussion" required />
@@ -56,7 +63,7 @@ const Contact = () => {
 };
 
 const Info = ({ icon, label, text }) => (
-  <div className="flex items-center gap-5">
+  <div data-aos="fade-up" data-aos-delay="200" className="flex items-center gap-5">
     <iconify-icon icon={icon} width="24" height="24" className="border p-2.5 rounded-xl bg-white/15 border-white/30"></iconify-icon>
     {/* <img src={icon}  alt={label} className="w-6 h-6 mt-1 object-contain text-white" />  */}
     <div className='space-y-1'>

@@ -1,9 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // src/components/Hero.jsx
 import { useEffect, useState } from 'react';
+import AOS from 'aos';
 import omarA from '../assets/omarA.jpg';
+import 'aos/dist/aos.css';
+
 
 const Hero = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1200, once: true });
+  }, []);
+
   const professions = [
     'Junior Back End Developer',
     'Laravel Enthusiast',
@@ -42,7 +49,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="gradient-bg min-h-screen pt-22 flex-items-center justify-center text-white relative overflow-hidden"
+      className="gradient-bg min-h-screen pt-36 flex-items-center justify-center text-white relative overflow-hidden"
     >
       {/* Floating blobs */}
       <div className="absolute inset-0">
@@ -61,24 +68,25 @@ const Hero = () => {
       <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
         <div className="mb-8 animate__animated animate__fadeIn">
           <img
+            data-aos="fade-up"
             src= {omarA}
             alt="Profile"
             className="w-32 h-32 rounded-full mx-auto mb-6 border-4 object-cover border-white/20 shadow-2xl hover:border-white/40 transition-all duration-500"
           />
         </div>
-        <h1 className="text-5xl md:text-7xl  font-bold mb-6 text-glow animate-fade-in-downx">
+        <h1 data-aos="fade-up" data-aos-delay="100" className="text-5xl md:text-7xl  font-bold mb-6 text-glow animate-fade-in-downx">
           Fiqry O.A
         </h1>
-        <p className="text-xl md:text-2xl mb-4 text-gray-200 animate__animated animate__fadeIn animate__delay-1s">
+        <p data-aos="fade-up" data-aos-delay="200" className="text-xl md:text-2xl mb-4 text-gray-200 animate__animated animate__fadeIn animate__delay-1s">
           <span className="typing-effect">{text || '\u00A0'}</span>
         </p>
-        <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-gray-300 animate__animated animate__fadeIn animate__delay-1s">
+        <p data-aos="fade-up" data-aos-delay="300" className="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-gray-300 animate__animated animate__fadeIn animate__delay-1s">
           Membangun sistem backend yang robust dan scalable menggunakan PHP,
           Laravel, MySQL, dan Python. Berpengalaman dalam mengembangkan API,
           microservices, dan arsitektur aplikasi enterprise.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate__animated animate__fadeInUp animate__delay-1s">
+        <div data-aos="fade-up" className="flex flex-col sm:flex-row gap-4 justify-center animate__animated animate__fadeInUp animate__delay-1s">
           <a
             href="#projects"
             className="border-2 border-white bg-white text-gray-600 px-8 py-3 rounded-full font-semibold hover:bg-white/80 transition-colors hover:shadow-lg"          >

@@ -1,5 +1,7 @@
 // src/components/Projects.jsx
-import React from 'react';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const projects = [
   {
@@ -32,23 +34,28 @@ const projects = [
 ];
 
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1200, once: true });
+  }, []);
+
   return (
     <section id="projects" className="py-20 bg-white dark:bg-gray-800">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+          <h2 data-aos="fade-up" className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div data-aos="fade-up" data-aos-delay="100" className="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
+          <p data-aos="fade-up" data-aos-delay="200" className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Some of my recent work and contributions
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, idx) => (
+          {projects.map((project, index) => (
             <div
-              key={idx}
+              key={index}
+              data-aos="fade-up" data-aos-delay={index*150}
               className="project-card bg-white dark:bg-gray-700 rounded-2xl shadow-lg overflow-hidden fade-in"
             >
               <div
@@ -91,6 +98,7 @@ const Projects = () => {
         <div className="text-center mt-12 fade-in">
           <a
             href="#"
+            data-aos="fade-up" data-aos-delay="100"
             className="inline-flex items-center px-6 py-3 border border-indigo-600 text-indigo-600 dark:text-indigo-400 dark:border-indigo-400 rounded-full font-semibold hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-700 transition-colors"
           >
             View All Projects <i className="fas fa-arrow-right ml-2"></i>

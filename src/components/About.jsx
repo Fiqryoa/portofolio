@@ -1,16 +1,21 @@
 import "iconify-icon";
-import { IconifyIconComponent } from "iconify-icon";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const About = () => {
+  useEffect(() => {
+      AOS.init({ duration: 1200, once: true });
+    }, []);
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-800">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+          <h2 data-aos="fade-up" className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <div data-aos="fade-up" data-aos-delay="100" className="w-24 h-1 bg-indigo-600 mx-auto mb-8"></div>
+          <p data-aos="fade-up" data-aos-delay="200" className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Get to know more about my expertise and professional journey
           </p>
         </div>
@@ -18,23 +23,23 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left */}
           <div className="fade-in">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">
+            <h3 data-aos="fade-up" className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">
               Passionate Backend Developer
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+            <p data-aos="fade-up" data-aos-delay="100" className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               Saya adalah seorang Back End Developer dengan pengalaman 1+ tahun
               dalam mengembangkan aplikasi web yang scalable dan performant.
               Fokus utama saya adalah membangun sistem backend yang clean,
               maintainable, dan mengikuti best practices.
             </p>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+            <p data-aos="fade-up" data-aos-delay="200" className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               Saya memiliki keahlian mendalam dalam PHP/Laravel ecosystem,
               database design, API development, dan deployment. Selalu eager to
               learn teknologi baru dan mengikuti perkembangan terbaru di dunia
               backend development.
             </p>
 
-            <div className="space-y-4">
+            <div data-aos="fade-up" data-aos-delay="300" className="space-y-4">
               <Info icon="weui:location-filled" text="Jakarta, Indonesia" />
               <Info icon="fa-graduation-cap" text="Informatics Engineering, Politeknik Negeri Indramayu" />
               {/* <Info icon="fa-briefcase" text="1+ Years Experience" /> */}
@@ -42,7 +47,7 @@ const About = () => {
           </div>
 
           {/* Right */}
-          <div className="fade-in">
+          <div data-aos="fade-up" data-aos-delay="200" className="fade-in">
             <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-700 dark:to-gray-800 p-8 rounded-2xl shadow-lg">
               <h4 className="text-xl font-semibold mb-6 text-gray-800 dark:text-white">
                 Expertise Areas

@@ -3,6 +3,9 @@ import githubLogo from '../assets/githubLogo.svg';
 import linkedinLogo from '../assets/linkedinLogo.svg';
 import instagramLogo from '../assets/instagramLogo.svg';
 import "iconify-icon";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const ConnectIcon = [
@@ -12,8 +15,12 @@ const ConnectIcon = [
 
 ];
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1200, once: true });
+  }, []);
+
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6">
+    <footer data-aos="fade-up" data-aos-delay="100" className="bg-gray-900 text-white pt-12 pb-6">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="fade-in">
