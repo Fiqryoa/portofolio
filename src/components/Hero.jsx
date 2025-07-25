@@ -81,8 +81,8 @@ const Hero = () => {
           <span className="typing-effect">{text || '\u00A0'}</span>
         </p>
         <p data-aos="fade-up" data-aos-delay="300" className="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-gray-300 animate__animated animate__fadeIn animate__delay-1s">
-          Membangun sistem backend yang robust dan scalable menggunakan PHP,
-          Laravel, MySQL, dan Python. Berpengalaman dalam mengembangkan API,
+          Membangun sistem backend yang robust dan scalable menggunakan Javascript (Node.js),
+          dan MySQL, serta mengintegrasikan dengan frontend berbasis React JS. Berpengalaman dalam pengembangan API,
           microservices, dan arsitektur aplikasi enterprise.
         </p>
 

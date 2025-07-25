@@ -27,13 +27,13 @@ const About = () => {
               Passionate Backend Developer
             </h3>
             <p data-aos="fade-up" data-aos-delay="100" className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              Saya adalah seorang Back End Developer dengan pengalaman 1+ tahun
+              Saya adalah seorang Back End Developer dengan pengalaman -1 tahun
               dalam mengembangkan aplikasi web yang scalable dan performant.
               Fokus utama saya adalah membangun sistem backend yang clean,
               maintainable, dan mengikuti best practices.
             </p>
             <p data-aos="fade-up" data-aos-delay="200" className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              Saya memiliki keahlian mendalam dalam PHP/Laravel ecosystem,
+              Saya memiliki keahlian dalam Javascript/Node.JS ecosystem,
               database design, API development, dan deployment. Selalu eager to
               learn teknologi baru dan mengikuti perkembangan terbaru di dunia
               backend development.

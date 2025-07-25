@@ -5,21 +5,30 @@ import 'aos/dist/aos.css';
 import dockerLogo from '../assets/dockerLogo.svg';
 import figmaLogo from '../assets/figmaLogo.svg';
 import githubLogo from '../assets/githubLogo.svg';
-import laravelLogo from '../assets/laravelLogo.svg';
+import pythonLogo from '../assets/pythonLogo.svg';
+import dartLogo from '../assets/dartLogo.svg';
 import mysqlLogo from '../assets/mysqlLogo.svg';
 import postmanLogo from '../assets/postmanLogo.svg';
-import vscodeLogo from '../assets/vscodeLogo.svg';
+import firebaseLogo from '../assets/firebaseLogo.svg';
 import react from '../assets/react.svg';
+import flutterLogo from '../assets/flutterLogo.svg';
+import htmlLogo from '../assets/htmlLogo.svg';
+import javascriptLogo from '../assets/javascriptLogo.svg';
+
 
 const tools = [
-  { name: 'Docker', type: 'img', logo: dockerLogo },
-  { name: 'Figma', type: 'img', logo: figmaLogo },
+  { nama: 'HTML', type: 'img', logo: htmlLogo },
+  { nama: 'JavaScript', type: 'img', logo: javascriptLogo },
+  { name: 'Python', type: 'img', logo: pythonLogo },
+  { name: 'Dart', type: 'img', logo: dartLogo },
   { name: 'Github', type: 'img', logo: githubLogo },
-  { name: 'Laravel', type: 'img', logo: laravelLogo },
   { name: 'Mysql', type: 'img', logo: mysqlLogo },
   { name: 'Postman', type: 'img', logo: postmanLogo },
-  { name: 'Vscode', type: 'img', logo: vscodeLogo },
+  { name: 'Firebase', type: 'img', logo: firebaseLogo },
   { name: 'React', type: 'img', logo: react },
+  { name: 'Flutter', type: 'img', logo: flutterLogo},
+  { name: 'Figma', type: 'img', logo: figmaLogo },
+  { name: 'Docker', type: 'img', logo: dockerLogo }
 ];
 
 const Tools = () => {
