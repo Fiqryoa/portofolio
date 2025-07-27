@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
-  // Close modal when pressing Escape key
+  // Close modal when pressing Escape key and handle body scroll lock
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -11,21 +11,52 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
+      // Store original body overflow and scrollbar width
+      const originalStyle = window.getComputedStyle(document.body);
+      const originalOverflow = originalStyle.overflow;
+      const originalPaddingRight = originalStyle.paddingRight;
+      
+      // Get scrollbar width
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      
+      // Prevent body scroll and compensate for scrollbar
       document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${parseInt(originalPaddingRight) + scrollbarWidth}px`;
+      
+      document.addEventListener('keydown', handleEscape);
+      
+      return () => {
+        document.removeEventListener('keydown', handleEscape);
+        document.body.style.overflow = originalOverflow;
+        document.body.style.paddingRight = originalPaddingRight;
+      };
     }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
-    };
   }, [isOpen, onClose]);
 
   if (!isOpen || !project) return null;
 
+  // Handle backdrop click to close modal
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
+  // Prevent scroll propagation from modal content
+  const handleModalScroll = (e) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 modal-backdrop"
+      onClick={handleBackdropClick}
+    >
+      <div 
+        className="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto modal-content"
+        onClick={(e) => e.stopPropagation()}
+        onScroll={handleModalScroll}
+      >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
@@ -124,46 +155,6 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               ))}
             </div>
           </div>
-
-          {/* Features */}
-          {project.features && project.features.length > 0 && (
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
-                Key Features
-              </h3>
-              <ul className="grid md:grid-cols-2 gap-2">
-                {project.features.map((feature, index) => (
-                  <li key={index} className="flex items-start">
-                    <i className="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
-                    <span className="text-gray-600 dark:text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Challenges */}
-          {project.challenges && project.challenges.length > 0 && (
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
-                Challenges & Solutions
-              </h3>
-              <div className="space-y-4">
-                {project.challenges.map((item, index) => (
-                  <div key={index} className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                    <h4 className="font-medium text-gray-800 dark:text-white mb-2">
-                      <i className="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
-                      {item.challenge}
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      <i className="fas fa-lightbulb text-green-500 mr-2"></i>
-                      {item.solution}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* Links */}
           <div className="flex flex-wrap gap-4">

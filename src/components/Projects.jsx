@@ -6,104 +6,105 @@ import ProjectModal from './ProjectModal';
 import ProjectGrid from './ProjectGrid';
 
 // Import screenshots
-import ecommerceDashboard from '../assets/screenshots/ecommerce-dashboard.svg';
+import topup1 from '../assets/topup1.png';
+import topup2 from '../assets/topup2.png';
 import analyticsChart from '../assets/screenshots/analytics-chart.svg';
 import crmInterface from '../assets/screenshots/crm-interface.svg';
 
 const projects = [
   {
-    title: 'E-Commerce API',
+    title: 'Gass Top-up',
     description:
-      'RESTful API untuk platform e-commerce dengan fitur lengkap: user management, product catalog, shopping cart, dan payment integration.',
+      'Platform web top-up game dan pulsa dengan sistem pembayaran terintegrasi. Dibangun dengan React.js + Vite untuk frontend dan Node.js + Express.js untuk backend.',
     fullDescription:
-      'Comprehensive e-commerce backend system yang dibangun dengan Laravel framework. API ini mendukung full e-commerce functionality termasuk user authentication, product management, shopping cart, order processing, payment integration dengan multiple gateways, dan admin dashboard. Dilengkapi dengan caching menggunakan Redis untuk performa optimal dan dokumentasi API yang lengkap.',
-    icon: 'fas fa-shopping-cart',
-    gradient: 'from-indigo-500 to-purple-600',
-    tech: ['Laravel', 'MySQL', 'Redis', 'JWT Auth', 'Stripe API', 'Docker'],
-    category: 'Backend Development',
-    duration: '3 months',
+      'Platform top-up modern yang menyediakan layanan top-up game online, pulsa, dan voucher digital. Frontend dibangun dengan React.js menggunakan Vite sebagai build tool dan Tailwind CSS untuk styling yang responsive dan modern. Backend menggunakan Node.js dengan Express.js framework untuk API yang cepat dan scalable. Sistem pembayaran terintegrasi dengan multiple payment gateway dan real-time notification system.',
+    icon: 'fas fa-gamepad',
+    gradient: 'from-emerald-500 to-teal-600',
+    tech: ['React.js', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js', 'MySQL'],
+    category: 'Full Stack Development',
+    duration: '4 months',
     status: 'Completed',
-    github: 'https://github.com/yourusername/ecommerce-api',
-    demo: 'https://ecommerce-demo.vercel.app',
-    documentation: 'https://docs.ecommerce-api.com',
+    github: 'https://github.com/Fiqryoa/gass-topup',
+    demo: 'https://gass-topup.vercel.app',
+    documentation: 'https://docs.gass-topup.com',
     screenshots: [
       {
-        url: ecommerceDashboard,
-        caption: 'Admin Dashboard - Product Management'
+        url: topup1,
+        caption: 'Homepage & Top-up Services'
       },
       {
-        url: ecommerceDashboard,
-        caption: 'API Documentation Interface'
+        url: topup2,
+        caption: 'Payment Gateway Integration'
       }
     ],
     features: [
-      'User Authentication & Authorization',
-      'Product Catalog Management',
-      'Shopping Cart & Wishlist',
-      'Order Processing System',
-      'Payment Gateway Integration',
-      'Admin Dashboard',
-      'Real-time Inventory Tracking',
-      'Email Notifications',
-      'Search & Filtering',
-      'API Rate Limiting'
+      'Multi-Game Top-up Services',
+      'Pulsa & Data Package Top-up',
+      'Multiple Payment Gateway Integration',
+      'Real-time Transaction Status',
+      'User Dashboard & History',
+      'Admin Panel for Management',
+      'Responsive Mobile Design',
+      'Automated Email Notifications',
+      'Price Calculator & Discount System',
+      'API Integration with Game Providers'
     ],
     challenges: [
       {
-        challenge: 'Handling concurrent cart updates',
-        solution: 'Implemented database transactions and optimistic locking to prevent race conditions'
+        challenge: 'Integrating multiple payment gateways with different APIs',
+        solution: 'Created unified payment service layer with adapter pattern to handle different gateway implementations'
       },
       {
-        challenge: 'Payment gateway integration complexity',
-        solution: 'Created abstract payment processor with strategy pattern for multiple gateways'
+        challenge: 'Real-time transaction status updates',
+        solution: 'Implemented WebSocket connections and webhook handlers for instant payment confirmations'
       }
     ]
   },
   {
-    title: 'Analytics Dashboard',
+    title: 'Flutter Mobile App',
     description:
-      'Backend system untuk dashboard analytics dengan real-time data processing, reporting, dan visualization menggunakan Python dan MySQL.',
+      'Aplikasi mobile cross-platform yang dibangun dengan Flutter dan Dart, menggunakan Firebase sebagai backend untuk authentication, database, dan cloud storage.',
     fullDescription:
-      'Advanced analytics platform yang dibangun dengan Python FastAPI untuk real-time data processing dan analytics. System ini mampu mengolah big data, generating reports, dan menyediakan RESTful API untuk frontend dashboard. Dilengkapi dengan automated data pipeline, caching system, dan real-time notifications.',
-    icon: 'fas fa-chart-line',
-    gradient: 'from-green-500 to-blue-600',
-    tech: ['Python', 'FastAPI', 'PostgreSQL', 'Celery', 'Redis', 'Pandas', 'NumPy'],
-    category: 'Data Analytics',
-    duration: '4 months',
-    status: 'In Production',
-    github: 'https://github.com/yourusername/analytics-dashboard',
-    demo: 'https://analytics-demo.vercel.app',
-    documentation: 'https://docs.analytics-dashboard.com',
+      'Aplikasi mobile modern yang dibangun dengan Flutter framework menggunakan bahasa Dart. Aplikasi ini mengintegrasikan berbagai layanan Firebase seperti Authentication untuk login/register, Firestore sebagai database real-time, Cloud Storage untuk penyimpanan file, dan Cloud Messaging untuk push notifications. Desain responsive dengan Material Design dan Cupertino untuk pengalaman native di Android dan iOS.',
+    icon: 'fas fa-mobile-alt',
+    gradient: 'from-blue-500 to-cyan-600',
+    tech: ['Flutter', 'Dart', 'Firebase Auth', 'Firestore', 'Cloud Storage', 'FCM'],
+    category: 'Mobile Development',
+    duration: '3 months',
+    status: 'Completed',
+    github: 'https://github.com/yourusername/flutter-app',
+    demo: 'https://play.google.com/store/apps/details?id=com.example.app',
+    documentation: 'https://docs.flutter-app.com',
     screenshots: [
       {
         url: analyticsChart,
-        caption: 'Real-time Analytics Dashboard'
+        caption: 'Login & Registration Screen'
       },
       {
         url: analyticsChart,
-        caption: 'Data Visualization Charts'
+        caption: 'Main Dashboard Interface'
       }
     ],
     features: [
-      'Real-time Data Processing',
-      'Custom Report Generation',
-      'Interactive Charts & Graphs',
-      'Data Export (PDF, Excel, CSV)',
-      'Automated Email Reports',
-      'API for Third-party Integration',
-      'User Role Management',
-      'Data Filtering & Segmentation',
-      'Performance Metrics Tracking',
-      'Scheduled Data Sync'
+      'User Authentication (Email/Google/Facebook)',
+      'Real-time Database with Firestore',
+      'File Upload & Cloud Storage',
+      'Push Notifications',
+      'Offline Support with Local Caching',
+      'Cross-platform (Android & iOS)',
+      'Material Design & Cupertino Widgets',
+      'State Management with Provider/Bloc',
+      'Image Picker & Camera Integration',
+      'Location Services & Maps'
     ],
     challenges: [
       {
-        challenge: 'Processing large datasets efficiently',
-        solution: 'Implemented chunked data processing with Celery workers and database indexing optimization'
+        challenge: 'Managing state across complex widget tree',
+        solution: 'Implemented Provider pattern with ChangeNotifier for efficient state management and reduced widget rebuilds'
       },
       {
-        challenge: 'Real-time data updates',
-        solution: 'Used WebSocket connections with Redis pub/sub for instant data synchronization'
+        challenge: 'Offline data synchronization',
+        solution: 'Used Firestore offline persistence with local SQLite cache and conflict resolution strategies'
       }
     ]
   },

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // src/components/Tools.jsx
-import dockerLogo from '../assets/dockerLogo.svg';
+// import dockerLogo from '../assets/dockerLogo.svg';
 import figmaLogo from '../assets/figmaLogo.svg';
 import githubLogo from '../assets/githubLogo.svg';
 import pythonLogo from '../assets/pythonLogo.svg';
@@ -14,6 +14,7 @@ import react from '../assets/react.svg';
 import flutterLogo from '../assets/flutterLogo.svg';
 import htmlLogo from '../assets/htmlLogo.svg';
 import javascriptLogo from '../assets/javascriptLogo.svg';
+import tailwindLogo from '../assets/tailwindLogo.svg';
 
 
 const tools = [
@@ -28,7 +29,8 @@ const tools = [
   { name: 'React', type: 'img', logo: react },
   { name: 'Flutter', type: 'img', logo: flutterLogo},
   { name: 'Figma', type: 'img', logo: figmaLogo },
-  { name: 'Docker', type: 'img', logo: dockerLogo }
+  { name: 'Tailwind CSS', type: 'img', logo: tailwindLogo}
+  // { name: 'Docker', type: 'img', logo: dockerLogo }
 ];
 
 const Tools = () => {
